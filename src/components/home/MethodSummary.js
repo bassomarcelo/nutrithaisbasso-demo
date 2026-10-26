@@ -9,7 +9,7 @@ export default function MethodSummary() {
         <section className="tb-method-home tb-section" id="metodo">
             <div className="container-custom">
                 <Reveal className="tb-section-heading tb-section-heading--center">
-                    <span className="tb-eyebrow">O método</span>
+                    <span className="tb-eyebrow">As consultas</span>
                     <h2>Seja Real, Não Perfeito</h2>
                     <p>
                         Um processo em quatro fases que integra nutrição, comportamento e estilo de vida. Sem promessas mágicas: um caminho possível, construído

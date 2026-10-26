@@ -10,25 +10,30 @@ import { INSTAGRAM, whatsappLink } from "../content/site";
 
 const FORMATION = [
     {
-        period: "2019–21",
+        period: "2019–2021",
+        icon: "fas fa-graduation-cap",
         title: "Pós-graduação em Nutrição Funcional e Comportamento Alimentar",
         institution: "UCS – Universidade de Caxias do Sul",
         text: "400 horas de formação com foco na avaliação integrada do indivíduo e na mudança de comportamento alimentar.",
     },
     {
         period: "2021",
+        icon: "fas fa-award",
         title: "Especialização em Emagrecimento e Saúde",
         institution: "NBE Academy",
         text: "180 horas dedicadas às diretrizes atuais de prevenção e tratamento da obesidade e comorbidades.",
     },
     {
-        period: "2012–18",
+        period: "2012–2018",
+        icon: "fas fa-landmark",
         title: "Graduação em Nutrição",
         institution: "UCS – Universidade de Caxias do Sul",
         text: "Formação generalista com práticas em saúde pública, clínica, alimentação coletiva e nutrição esportiva.",
     },
     {
         period: "Contínuo",
+        ongoing: true,
+        icon: "fas fa-book-open",
         title: "Mais de 10 cursos de especialização",
         institution: "Saúde intestinal, nutrição vegetariana, saúde da mulher e fitoterapia",
         text: "Atualização constante para oferecer um cuidado integrado e baseado em evidências.",
@@ -101,16 +106,16 @@ export default function Sobre() {
 
                             <div className="tb-stats">
                                 <div className="tb-stat">
-                                    <strong>+2.000</strong>
+                                    <strong>+5.000</strong>
                                     <span>atendimentos no Brasil e no mundo</span>
                                 </div>
                                 <div className="tb-stat">
-                                    <strong>10+</strong>
-                                    <span>cursos de especialização</span>
+                                    <strong>5</strong>
+                                    <span>anos de experiência clínica</span>
                                 </div>
                                 <div className="tb-stat">
-                                    <strong>CRN-2</strong>
-                                    <span>16231D</span>
+                                    <strong>4+</strong>
+                                    <span>formações em nutrição</span>
                                 </div>
                             </div>
                         </Reveal>
@@ -133,20 +138,28 @@ export default function Sobre() {
                     <Reveal className="tb-section-heading tb-section-heading--center">
                         <span className="tb-eyebrow">Formação</span>
                         <h2>Ciência e atualização constante</h2>
-                        <p>Uma base sólida para cuidar com responsabilidade, sem modismos e sem promessas vazias.</p>
+                        <p>Como uma profissional da saúde, me baseio em estudos e análises com base científica para construir meu método e minha abordagem. Conheça um pouco mais sobre a minha formação profissional e educacional para cuidar, com responsabilidade, dos meus pacientes. Sem modismos e sem promessas vazias.</p>
                     </Reveal>
 
-                    <div className="tb-steps">
+                    <div className="tb-formation">
                         {FORMATION.map((item, index) => (
-                            <Reveal className="tb-step" key={item.title} delay={index * 70}>
-                                <span className="tb-step-number" style={{ fontSize: "1rem", fontFamily: "var(--second-font)", letterSpacing: "0.06em" }}>
-                                    {item.period}
-                                </span>
-                                <div>
+                            <Reveal
+                                className={`tb-formation-item${item.ongoing ? " tb-formation-item--ongoing" : ""}`}
+                                key={item.title}
+                                delay={index * 70}
+                            >
+                                <div className="tb-formation-head">
                                     <h3>{item.title}</h3>
-                                    <p style={{ color: "var(--pallete-fisrt)", fontWeight: 600, marginBottom: 6 }}>{item.institution}</p>
-                                    <p>{item.text}</p>
+                                    <span className="tb-formation-period">
+                                        <i className="far fa-calendar" aria-hidden="true" />
+                                        {item.period}
+                                    </span>
                                 </div>
+                                <p className="tb-formation-institution">
+                                    <i className={item.icon} aria-hidden="true" />
+                                    {item.institution}
+                                </p>
+                                <p className="tb-formation-text">{item.text}</p>
                             </Reveal>
                         ))}
                     </div>

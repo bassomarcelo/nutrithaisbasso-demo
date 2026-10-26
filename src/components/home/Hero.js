@@ -4,12 +4,18 @@ import React from "react";
 import Reveal from "../common/Reveal";
 import "./Hero.css";
 
-const MARQUEE_PHRASES = ["Sem dieta", "Sem culpa", "Sem perfeição", "Nutrição comportamental", "Hábitos reais"];
+const MARQUEE_PHRASES = ["Emagrecimento com saúde", "Melhora da composição hormonal", "Mais energia e disposição", "Relação leve com a comida", "Prevenção de doenças", "Qualidade de vida"];
 
 export default function Hero() {
     const data = useStaticQuery(graphql`
         query HomeHeroImage {
-            image: file(relativePath: { eq: "15-12-2025/IMG_7572.jpg" }) {
+            image_one: file(relativePath: { eq: "04-2026/IMG_1650.jpg" }) {
+                childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 88)
+                }
+            }
+
+            image_two: file(relativePath: { eq: "15-12-2025/IMG_7572.jpg" }) {
                 childImageSharp {
                     gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 88)
                 }
@@ -17,7 +23,7 @@ export default function Hero() {
         }
     `);
 
-    const image = getImage(data.image.childImageSharp.gatsbyImageData);
+    const image = getImage(data.image_two.childImageSharp.gatsbyImageData);
 
     return (
         <section className="tb-hero">
@@ -34,9 +40,9 @@ export default function Hero() {
                             <span className="tb-hero-title-top">Thaís Basso · Nutricionista Comportamental</span>
                             Nutrição para <em>hábitos reais</em>
                         </h1>
-                        <p className="tb-hero-subtitle">Saúde sem dieta, sem culpa e sem perfeição.</p>
+                        <p className="tb-hero-subtitle">Saúde sem dietas desnecessárias, sem culpa e com resultados reais.</p>
                         <p className="tb-hero-text">
-                            Um trabalho individual para você sair do ciclo de restrição e recomeço, aprender a comer com autonomia e construir uma rotina
+                            Um trabalho individual para construir hábitos acolhedores, realistas e sustentáveis. Aprenda a comer com autonomia e construir uma rotina
                             que caiba na sua vida de verdade.
                         </p>
 
@@ -53,11 +59,11 @@ export default function Hero() {
                         <ul className="tb-hero-trust" aria-label="Credenciais e diferenciais">
                             <li>
                                 <i className="fas fa-heart" aria-hidden="true" />
-                                Mais de 2.000 atendimentos
+                                Mais de 5 anos de experiência clínica
                             </li>
                             <li>
                                 <i className="fas fa-laptop-medical" aria-hidden="true" />
-                                Presencial e online
+                                CRN-2 16231D
                             </li>
                             <li>
                                 <i className="fas fa-seedling" aria-hidden="true" />
@@ -83,7 +89,7 @@ export default function Hero() {
                         </div>
 
                         <div className="tb-hero-card tb-hero-card--numbers">
-                            <strong>+2.000</strong>
+                            <strong>+5.000</strong>
                             <span>
                                 atendimentos
                                 <br />
@@ -93,7 +99,7 @@ export default function Hero() {
 
                         <div className="tb-hero-card tb-hero-card--online">
                             <i className="fas fa-video" aria-hidden="true" />
-                            Atende de qualquer lugar
+                            Atendimento presencial e online
                         </div>
                     </Reveal>
                 </div>

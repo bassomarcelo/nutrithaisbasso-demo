@@ -15,6 +15,12 @@ export const ADDRESS = {
 export const whatsappLink = (message = "Olá, Thaís! Quero saber mais sobre o seu trabalho.") =>
     `https://api.whatsapp.com/send?1=pt_BR&phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
 
+// Place ID do Google Business de Thaís. As avaliações são buscadas no servidor
+// uma vez ao dia pelo GitHub Actions (scripts/fetch-google-reviews.mjs), que
+// salva em src/content/google-reviews.json. A chave GOOGLE_PLACES_API_KEY fica
+// nos secrets do repositório (Places API New).
+export const GOOGLE_PLACE_ID = "ChIJT7YbG14ZHJURKHQTWKdohF4";
+
 export const SOCIAL_LINKS = [
     { icon: "fa-instagram", href: INSTAGRAM, label: "Instagram" },
     { icon: "fa-facebook", href: "https://www.facebook.com/nutricionistathaisb", label: "Facebook" },
@@ -47,63 +53,82 @@ export const PRODUCTS = {
     },
 };
 
+export const PLANS = [
+    {
+        name: "Consulta Inicial",
+        label: "Primeiro passo",
+        meta: "60 minutos + retorno",
+        description: "Uma consulta completa com retorno incluído para dar o primeiro passo com direcionamento.",
+        price: "R$ 420,00",
+        note: "à vista ou 2x de R$ 225,00 no cartão",
+        cta: "Agendar consulta",
+        message: "Olá, Thaís! Quero agendar a Consulta Inicial (60 minutos + retorno).",
+    },
+    {
+        name: "Programa 4 consultas",
+        label: "Programa",
+        meta: "5 consultas",
+        forWho: [
+            "Quer começar com direcionamento",
+            "Precisa de apoio para manter constância",
+            "Busca organizar a alimentação e sustentar resultados",
+        ],
+        allows: [
+            "Organização alimentar",
+            "Ajustes progressivos da rotina",
+            "Identificação de gatilhos",
+        ],
+        price: "R$ 1.932,00",
+        note: "ou em até 6x de R$ 322,00",
+        discount: "10% off no pagamento à vista",
+        cta: "Quero este programa",
+        message: "Olá, Thaís! Quero saber mais sobre o Programa de 4 consultas.",
+    },
+    {
+        name: "Programa 10 consultas",
+        label: "Completo",
+        meta: "10 consultas",
+        forWho: [
+            "Já tentou outras abordagens e não conseguiu manter resultados",
+            "Quer um acompanhamento mais profundo e contínuo com TODAS as fases do método",
+        ],
+        allows: [
+            "Consolidação de hábitos",
+            "Construção de autonomia",
+            "Prevenção de recaídas",
+        ],
+        price: "R$ 3.552,00",
+        note: "ou em até 12x de R$ 296,00",
+        discount: "10% off no pagamento à vista",
+        cta: "Quero este programa",
+        message: "Olá, Thaís! Quero saber mais sobre o Programa de 10 consultas.",
+    },
+];
+
 export const METHOD_PHASES = [
     {
         number: "01",
-        title: "Realidade, não perfeição",
-        text: "O primeiro passo é olhar para a sua rotina como ela é: horários, trabalho, família, cansaço e preferências. Sem julgamento e sem um plano impossível de seguir.",
+        title: "Pré-consulta",
+        text: "O primeiro passo é responder um questionário completo pré-consulta, para eu te conhecer e para aproveitarmos melhor nosso tempo juntas.",
         icon: "fa-hand-holding-heart",
     },
     {
         number: "02",
-        title: "Entender o porquê",
-        text: "Comida também é emoção, cultura e companhia. Vamos identificar gatilhos, fomes e crenças para que a mudança não dependa apenas de força de vontade.",
+        title: "Consulta inicial",
+        text: "Com a avaliação completa, análise da usa rotina, hábitos, histórico de saúde, exames (se necessário) e definição dos seus objetivos.",
         icon: "fa-brain",
     },
     {
         number: "03",
-        title: "Construir o possível",
-        text: "Com um plano personalizado e cardápios ilustrados, você aprende combinações e trocas reais para comer bem em casa, no trabalho ou na vida social.",
+        title: "Plano de tratamento personalizado",
+        text: "Criamos juntas um plano alimentar sustentável, com estratégias práticas para a sua rotina, sem dietas malucas.",
         icon: "fa-seedling",
     },
     {
         number: "04",
-        title: "Sustentar a autonomia",
-        text: "Nos retornos, ajustamos o caminho e fortalecemos hábitos que continuam depois da consulta. O objetivo é autonomia, não dependência de dieta.",
+        title: "Consulta de retorno",
+        text: "Agendamos uma consulta de retorno de 30 minutos para acompanharmos sua evolução, tirar dúvidas e realizar os primeiros ajustes do plano.",
         icon: "fa-compass",
-    },
-];
-
-export const TESTIMONIALS = [
-    {
-        name: "Andressa Morari Canal",
-        text: "Aprendi a fazer trocas inteligentes de alimentos que muitas vezes escolhia por costume. Com um plano adaptado às minhas necessidades, entendi que comer bem não é difícil: precisa de dedicação e organização.",
-        link: "https://g.co/kgs/gpcbHb",
-        avatar: "andressa-morari-canal.png",
-    },
-    {
-        name: "Vitória Tesser Henkes",
-        text: "Atendimento profissional, cuidadoso e humano! A Thaís mantém excelentes acompanhamentos com os pacientes e tem visões amplas sobre saúde e alimentação, proporcionando muita qualidade de vida.",
-        link: "https://g.co/kgs/AFdNLb",
-        avatar: "vitoria-tesser-henkes.png",
-    },
-    {
-        name: "Taís Macena de Oliveira",
-        text: "Me fez ver a comida de outra forma. Percebi o impacto da alimentação de uma forma completa. Diferente de outras experiências que tive, que só mostravam déficit calórico e nada mais.",
-        link: "https://g.co/kgs/PkKpVj",
-        avatar: null,
-    },
-    {
-        name: "Priscila Merzoni",
-        text: "Ela sabe ouvir e entender nossas dificuldades e conseguiu fazer um plano alimentar que eu também conseguisse seguir sem restrições. Nunca havia conseguido seguir uma dieta por mais de 15 dias; já estamos a um mês e sigo no caminho.",
-        link: "https://g.co/kgs/RQHyF6",
-        avatar: null,
-    },
-    {
-        name: "Lisiane Delai",
-        text: "O que mais me deixa satisfeita é saber que nada é restringido: eu escolho o que quero comer. A perda de peso aconteceu sem que eu percebesse. Essa liberdade é importante para que o processo se torne um hábito.",
-        link: "https://g.co/kgs/9zVbu4",
-        avatar: null,
     },
 ];
 

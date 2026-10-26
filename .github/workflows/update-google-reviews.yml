@@ -1,0 +1,42 @@
+# Busca as avaliações do Google uma vez por dia e commita o resultado
+# (src/content/google-reviews.json), que o site lê em tempo de build.
+# Configure os secrets GOOGLE_PLACES_API_KEY e GOOGLE_PLACE_ID no repositório.
+
+name: Update Google reviews
+
+on:
+  schedule:
+    # 09:00 UTC = 06:00 em Brasília (UTC-3)
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch reviews from Google Places API
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ secrets.GOOGLE_PLACE_ID }}
+        run: node scripts/fetch-google-reviews.mjs
+
+      - name: Commit updated reviews
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/google-reviews.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma mudança nas avaliações."
+          else
+            git commit -m "Update Google reviews (cron)"
+            git push
+          fi

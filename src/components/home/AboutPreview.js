@@ -8,7 +8,7 @@ import "./AboutPreview.css";
 export default function AboutPreview() {
     const data = useStaticQuery(graphql`
         query HomeAboutImage {
-            image: file(relativePath: { eq: "04-2026/IMG_1532.jpg" }) {
+            image: file(relativePath: { eq: "04-2026/IMG_1650.jpg" }) {
                 childImageSharp {
                     gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 88)
                 }
@@ -19,7 +19,7 @@ export default function AboutPreview() {
     const image = getImage(data.image.childImageSharp.gatsbyImageData);
 
     return (
-        <section className="tb-about-preview tb-section" id="sobre">
+        <section className="tb-about-preview tb-section tb-section--lavender" id="sobre">
             <div className="container-custom">
                 <div className="tb-about-preview-grid">
                     <Reveal className="tb-about-preview-media">
@@ -34,15 +34,14 @@ export default function AboutPreview() {
                     </Reveal>
 
                     <Reveal className="tb-about-preview-copy" delay={120}>
-                        <span className="tb-eyebrow">Sobre mim</span>
+                        <span className="tb-eyebrow">Quem sou eu?</span>
                         <h2>Nutrição com escuta, ciência e realidade</h2>
+                        
                         <p className="tb-lead">
-                            Sou a Thaís Basso, nutricionista pós-graduada em nutrição funcional e comportamento alimentar. Há mais de uma década ajudo pessoas a
-                            construir uma relação mais leve com a comida — longe do terrorismo nutricional e das dietas que não se sustentam.
+                            Sou a Thaís Basso, nutricionista clínica, especialista em Nutrição Funcional, Comportamento Alimentar, Emagredimento e Saúde. Criadora do método Seja Real, Não Perfeito, que integra ciência, comportamento alimentar, neurociência dos hábitos e estilo de vida.  
                         </p>
                         <p>
-                            Meu trabalho integra nutrição, comportamento e estilo de vida. Não olho apenas para o que você come, mas para como vive: sono, rotina,
-                            trabalho, relações e emoções. É aí que a mudança acontece de verdade.
+                            Com mais de 5.000 atendimentos no Brasil e no exterior, atuo com uma nutrição acolhedora, realisa e sustentável, focada em mudanças de comportamento e na sua qualidade de vida.
                         </p>
 
                         <ul className="tb-about-preview-list">
@@ -56,7 +55,7 @@ export default function AboutPreview() {
                             </li>
                             <li>
                                 <i className="fas fa-heart" aria-hidden="true" />
-                                Mais de 2.000 atendimentos no Brasil e no mundo
+                                Nutrição acolhedora com acompanhamento individual 
                             </li>
                         </ul>
 

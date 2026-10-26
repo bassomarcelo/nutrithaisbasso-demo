@@ -63,6 +63,7 @@
 
 .tb-card:hover .tb-icon-bubble {
     background: var(--pallete-third);
+    color: var(--pallete-second);
     transform: rotate(-5deg) scale(1.04);
 }
 
@@ -219,6 +220,97 @@
 .tb-step-icon {
     margin-bottom: 10px;
     color: var(--pallete-fisrt);
+}
+
+/* Formação (Sobre) */
+.tb-formation {
+    display: grid;
+    gap: 16px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.tb-formation-item {
+    padding: clamp(20px, 3vw, 28px) clamp(22px, 3.2vw, 34px);
+    border: 1px solid var(--tb-line);
+    border-radius: var(--tb-radius);
+    background: var(--tb-surface);
+    box-shadow: 0 12px 32px -30px rgba(114, 59, 90, 0.45);
+    transition: border-color var(--tb-transition), box-shadow var(--tb-transition), transform var(--tb-transition);
+}
+
+.tb-formation-item:hover {
+    border-color: rgba(114, 59, 90, 0.28);
+    box-shadow: var(--tb-shadow-soft);
+    transform: translateY(-3px);
+}
+
+.tb-formation-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px 18px;
+    margin-bottom: 10px;
+}
+
+.tb-formation-head h3 {
+    margin: 0;
+    font-family: var(--main-font);
+    font-size: clamp(1.06rem, 1.6vw, 1.24rem);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--pallete-fisrt);
+}
+
+.tb-formation-period {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: var(--pallete-second);
+    color: var(--pallete-fisrt);
+    font-family: var(--second-font);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.tb-formation-period i {
+    font-size: 0.66rem;
+}
+
+.tb-formation-item--ongoing .tb-formation-period {
+    background: var(--pallete-third);
+    color: var(--pallete-second);
+}
+
+.tb-formation-institution {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 0 10px;
+    color: var(--pallete-fisrt);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tb-formation-institution i {
+    color: var(--pallete-third);
+    font-size: 0.84rem;
+}
+
+.tb-formation-text {
+    margin: 0;
+    color: var(--tb-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
 }
 
 /* Preços */

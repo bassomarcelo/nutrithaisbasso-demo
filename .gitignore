@@ -1,3 +1,5 @@
 /.cache
 /node_modules
 /public
+# Chaves de API (Google Places) nunca devem ser versionadas
+.env*

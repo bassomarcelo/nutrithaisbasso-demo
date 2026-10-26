@@ -1,20 +1,21 @@
 {
     "name": "thais basso nutricionista funcional e comportamental",
     "private": true,
-    "description": "Um site profissional desenvolvido com gatsby, react, e material design bootstrap",
+    "description": "Portfolio profissional desenvolvido com gatsby, react, e material design bootstrap",
     "homepage": ".",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "license": "0BSD",
     "scripts": {
         "deploy": "gatsby clean && gatsby build && gh-pages -d public",
-        "deploy-demo": "npm run build:demo && gh-pages -d public -b master -r \"${DEMO_REPO_URL:-git@github.com:marcelobasso/nutrithaisbasso-demo.git}\"",
-        "take-down-demo": "gh-pages -d scripts/demo-down -b master -r \"${DEMO_REPO_URL:-git@github.com:marcelobasso/nutrithaisbasso-demo.git}\"",
+        "deploy-demo": "npm run build:demo && gh-pages -d public -b master -r \"${DEMO_REPO_URL:-git@github.com:bassomarcelo/nutrithaisbasso-demo.git}\"",
+        "take-down-demo": "gh-pages -d scripts/demo-down -b master -r \"${DEMO_REPO_URL:-git@github.com:bassomarcelo/nutrithaisbasso-demo.git}\"",
         "build": "gatsby build",
         "build:demo": "gatsby clean && DEMO=1 gatsby build",
         "develop": "gatsby develop",
         "start": "gatsby develop",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
+        "fetch-reviews": "node scripts/fetch-google-reviews.mjs",
         "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
     },
     "dependencies": {

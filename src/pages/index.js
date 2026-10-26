@@ -6,7 +6,7 @@ import Faq from "../components/common/Faq";
 import AboutPreview from "../components/home/AboutPreview";
 import Hero from "../components/home/Hero";
 import MethodSummary from "../components/home/MethodSummary";
-import OtherWays from "../components/home/OtherWays";
+import Plans from "../components/home/Plans";
 import Promise from "../components/home/Promise";
 import Testimonials from "../components/home/Testimonials";
 import { HOME_FAQ, INSTAGRAM, whatsappLink } from "../content/site";
@@ -15,11 +15,13 @@ export default function Home() {
     return (
         <Layout>
             <Hero />
-            <Promise />
-            <MethodSummary />
-            <OtherWays />
-            <Testimonials />
             <AboutPreview />
+            <MethodSummary />
+            {/* <Promise /> */}
+            <Plans />
+
+            <Testimonials />
+
             <Faq items={HOME_FAQ} title="Perguntas frequentes" subtitle="Se a sua dúvida não estiver aqui, me chame no WhatsApp. Será um prazer conversar." />
 
             <CtaBanner
