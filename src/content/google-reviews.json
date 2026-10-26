@@ -1,6 +1,42 @@
 {
-    "rating": null,
-    "userRatingCount": null,
-    "fetchedAt": null,
-    "reviews": []
+    "rating": 5,
+    "userRatingCount": 153,
+    "fetchedAt": "2026-10-26T21:13:37.648Z",
+    "reviews": [
+        {
+            "name": "Karine Pradella",
+            "text": "A Thaís é uma profissional incrível e que me ajudou a transformar minha relação com a alimentação e a ter uma vida muito mais saudável. A gente muitas vezes acha que, para fazer dieta, precisa restringir um monte de coisas, comer pouco e passar vontade, mas é justamente o contrário!\nCom o acompanhamento da Thaís, consegui perder peso comendo até mais do que eu comia antes, mas agora de uma forma equilibrada e fazendo as escolhas certas, além de conciliar a alimentação com os treinos na academia. Ela me passou um plano alimentar com comidas saudáveis, naturais e, principalmente, comida de verdade, sem nada mirabolante ou impossível de manter. E os resultados estão sendo ótimos!\nFazer acompanhamento nutricional realmente mudou minha vida para melhor. Hoje me sinto muito bem comigo mesma e, mais do que perder peso, sinto que aprendi a me alimentar de uma forma que consigo manter. Acho que essa é a parte mais importante de todo esse processo: ele é bom de viver. Não sinto que estou fazendo uma dieta que precisa acabar, mas sim construindo hábitos que quero levar para a vida toda.",
+            "rating": 5,
+            "relativeTime": "um mês atrás",
+            "photo": null
+        },
+        {
+            "name": "Ruan Pablo",
+            "text": "Fazer acompanhamento com a nutricionista foi uma das melhores decisões que tomei para cuidar da minha saúde. Desde a primeira consulta, ela não focou apenas em montar uma dieta, mas em entender meus objetivos, minhas dificuldades, minha rotina e até as crenças que, sem eu perceber, acabavam atrapalhando meu processo de emagrecimento.\n\nO atendimento é extremamente cuidadoso e individualizado. Todas as minhas dúvidas são esclarecidas com muita paciência, sempre com explicações claras e baseadas em conhecimento, o que me trouxe muito mais segurança para seguir o plano. Em vez de simplesmente entregar uma dieta, ela busca construir estratégias que realmente façam sentido para a minha realidade.\n\nEm apenas alguns meses de acompanhamento já consegui obter bons resultados, e o mais importante é que me sinto motivado e confiante para continuar.\n\nRecomendo para quem procura uma profissional competente, humana, atenciosa e realmente comprometida com a evolução dos seus pacientes.",
+            "rating": 5,
+            "relativeTime": "3 meses atrás",
+            "photo": null
+        },
+        {
+            "name": "Mariele Baldasso",
+            "text": "Participei do desafio de 21 dias e, mesmo já tendo uma rotina bem estruturada de hábitos saudáveis há anos, achei a proposta muito valiosa.\n\nFoi uma experiência importante para reforçar práticas que muitas vezes a gente faz no automático, mas que precisam de constância e intenção. Além disso, o acompanhamento e a forma como tudo foi conduzido fazem toda diferença, pois trazem mais consciência e organização no dia a dia.\n\nAcredito que para quem está começando, o desafio tem um potencial ainda maior, porque direciona de forma simples e aplicável. E mesmo para quem já vive esse estilo de vida, sempre existem pontos para ajustar, revisar e fortalecer. 🤍",
+            "rating": 5,
+            "relativeTime": "6 meses atrás",
+            "photo": null
+        },
+        {
+            "name": "Carolina Millan",
+            "text": "A Thais me ajudou demais a compreender melhor meu processo, a conhecer como meu corpo funciona e seguir a melhor estratégia para lidar com aquilo que me impedia ser mais funcional e saudável, sem me atropelar na tentativa. Meus exames de sangue melhoraram muito, valeu muito a pena o tempo que ela me acompanhou!",
+            "rating": 5,
+            "relativeTime": "5 meses atrás",
+            "photo": null
+        },
+        {
+            "name": "Grazielli Padilha Vieira",
+            "text": "Eu faço acompanhamento online com a Thais ha mais de 6 meses. Tem sido uma experiencia otima e me ajudou a melhorar minha saude intestinal, minha rotina e ter mais consciência sobre a forma como me alimento. O que gosto aqui é que ela foca em nutrir, desinflamar e mudar hábitos sem receitas prontas ou formulas magicas.\nSou alérgica ao glúten e tomar ciencia de gatilhos comportamentais, aprender a escolher melhor os alimentos e encontrar um caminho q funciona pra mim. Thais é uma profissional humanizada, gentil e super aberta a ouvir o paciente. Adoro nossos encontros e esse tem sido um processo leve e dinâmico de  mudanças de habitos e comportamentos. Obriigada Nutri Thais!",
+            "rating": 5,
+            "relativeTime": "6 meses atrás",
+            "photo": null
+        }
+    ]
 }
