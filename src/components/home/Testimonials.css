@@ -151,8 +151,8 @@
 .tb-testimonial-avatar--initials {
     display: grid;
     place-items: center;
-    background: var(--pallete-second);
-    color: var(--pallete-fisrt);
+    background: linear-gradient(135deg, var(--pallete-second), rgba(114, 59, 90, 0.55));
+    color: #fff;
     font-size: 0.8rem;
     font-weight: 700;
 }

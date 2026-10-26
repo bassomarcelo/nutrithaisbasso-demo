@@ -26,6 +26,11 @@ const GoogleIcon = ({ className = "" }) => (
     </svg>
 );
 
+const limitWords = (text, max = 50) => {
+    const words = text.split(/\s+/).filter(Boolean);
+    return words.length <= max ? text : `${words.slice(0, max).join(" ")}…`;
+};
+
 const renderStars = (rating) =>
     [1, 2, 3, 4, 5].map((step) => (
         <i key={step} className={`fas fa-star ${step <= Math.round(rating) ? "is-filled" : "is-empty"}`} aria-hidden="true" />
@@ -39,7 +44,7 @@ export default function Testimonials() {
     const testimonials = googleReviews.reviews.map((review) => ({
         key: review.name,
         name: review.name,
-        text: review.text,
+        text: limitWords(review.text),
         rating: review.rating ?? 5,
         photo: review.photo || null,
         label: review.relativeTime || "Avaliação no Google",
@@ -60,9 +65,9 @@ export default function Testimonials() {
             <div className="container-custom">
                 <div className="tb-testimonials-head">
                     <Reveal className="tb-section-heading">
-                        <span className="tb-eyebrow">Prova social</span>
+                        <span className="tb-eyebrow">Avaliações reais</span>
                         <h2>O que meus pacientes estão dizendo</h2>
-                        <p>Histórias reais de quem trocou a dieta do “nunca mais” por uma relação mais leve e possível com a comida.</p>
+                        <p>Quer saber como é o atendimento na prática? Veja a experiência de quem já passou por aqui.</p>
                     </Reveal>
 
                     <Reveal className="tb-google-badge" delay={100}>
