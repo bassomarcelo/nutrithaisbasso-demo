@@ -39,6 +39,12 @@
     isolation: isolate;
 }
 
+.tb-page-hero-after {
+    position: relative;
+    z-index: 1;
+    margin-top: clamp(32px, 5vw, 56px);
+}
+
 .tb-photo-frame {
     position: relative;
     overflow: hidden;

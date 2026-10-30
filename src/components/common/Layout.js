@@ -42,7 +42,7 @@ export default function Layout(props) {
         <>
             <ScrollProgress />
             <Navbar page={props.page || ""} />
-            <div className="filler" style={{ display: "block", height: "86px" }} aria-hidden="true" />
+            <div className="filler" style={{ display: "block", height: "68px" }} aria-hidden="true" />
             <main className={`page-content ${props.page || ""}`}>{props.children}</main>
             <Footer />
             <a className="tb-whatsapp-float" href={whatsappLink()} target="_blank" rel="noreferrer" data-label="Falar no WhatsApp" aria-label="Falar com a Thaís no WhatsApp">

@@ -21,19 +21,106 @@
     transform: translateY(-5px);
 }
 
-.tb-plans-grid .tb-plan-card:nth-child(2) {
-    border-color: var(--pallete-fisrt);
+/* Tons de cada plano: cor de destaque usada no ícone, no selo e nos checks */
+.tb-plan-card--neutral {
+    --plan-accent: var(--pallete-fisrt);
+    --plan-border: rgba(114, 59, 90, 0.2);
+}
+
+.tb-plan-card--violet {
+    --plan-accent: var(--pallete-fisrt);
+    --plan-border: rgba(114, 59, 90, 0.35);
+    --plan-wash: rgba(222, 208, 231, 0.45);
+    --plan-cta-color: #fff;
+}
+
+.tb-plan-card--green {
+    --plan-accent: var(--pallete-third);
+    --plan-border: rgba(64, 82, 66, 0.35);
+    --plan-wash: rgba(64, 82, 66, 0.12);
+    --plan-cta-color: var(--pallete-fourth);
+}
+
+/* Os planos de acompanhamento ganham mais peso visual que a consulta avulsa */
+.tb-plan-card--featured {
+    position: relative;
+    overflow: hidden;
+    border-color: var(--plan-border);
+    /* background: linear-gradient(180deg, #fff 0%, #fff 42%, var(--plan-wash) 100%); */
+    box-shadow: 0 24px 50px -34px rgba(114, 59, 90, 0.6);
+}
+
+.tb-plan-card--featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 6px;
+    background: var(--plan-accent);
+}
+
+.tb-plan-card--featured:hover {
+    border-color: var(--plan-accent);
+    transform: translateY(-8px);
 }
 
 .tb-plan-head {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 12px;
     margin-bottom: 18px;
 }
 
 .tb-plan-icon {
     margin-bottom: 0;
+    transition: transform var(--tb-transition), background var(--tb-transition), color var(--tb-transition), box-shadow var(--tb-transition);
+}
+
+.tb-plan-card:hover .tb-plan-icon {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* Ícones coloridos, um por plano, para diferenciar os cards de imediato */
+.tb-plan-icon--neutral {
+    background: var(--pallete-second);
+    color: var(--pallete-fisrt);
+}
+
+.tb-plan-icon--violet {
+    background: var(--pallete-fisrt);
+    color: var(--pallete-second);
+    box-shadow: 0 14px 26px -16px rgba(114, 59, 90, 0.95);
+}
+
+.tb-plan-icon--green {
+    background: var(--pallete-third);
+    color: var(--pallete-fourth);
+    box-shadow: 0 14px 26px -16px rgba(64, 82, 66, 0.95);
+}
+
+.tb-plan-card--featured .tb-plan-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 1.35rem;
+}
+
+/* Selo de cada plano */
+.tb-plan-card .tb-tag--neutral {
+    background: rgba(222, 208, 231, 0.55);
+    color: var(--pallete-fisrt);
+}
+
+.tb-plan-card .tb-tag--violet {
+    background: var(--pallete-fisrt);
+    color: #fff;
+}
+
+.tb-plan-card .tb-tag--green {
+    background: var(--pallete-third);
+    color: var(--pallete-fourth);
 }
 
 .tb-plan-card h3 {
@@ -55,6 +142,36 @@
     color: var(--tb-muted);
     font-size: 0.94rem;
     margin-bottom: 16px;
+}
+
+.tb-plan-includes {
+    display: grid;
+    gap: 10px;
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.tb-plan-includes li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    color: var(--tb-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.tb-plan-includes i {
+    flex: 0 0 16px;
+    display: grid;
+    place-items: center;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: var(--plan-accent);
+    color: var(--plan-cta-color, #fff);
+    font-size: 0.55rem;
 }
 
 .tb-plan-block {
@@ -105,7 +222,7 @@
     gap: 16px;
     align-items: flex-end;
     justify-content: space-between;
-    margin-top: 24px;
+    margin-top: auto;
     padding-top: 24px;
     border-top: 1px solid var(--tb-line);
 }
@@ -161,6 +278,28 @@
 
 .tb-plan-cta:hover i {
     transform: translateX(4px);
+}
+
+/* Nos planos em destaque o CTA vira botão cheio */
+.tb-plan-card--featured .tb-plan-cta {
+    padding: 11px 18px;
+    border-radius: 999px;
+    background: var(--plan-accent);
+    color: var(--plan-cta-color);
+    font-size: 0.8rem;
+    transition: transform var(--tb-transition), box-shadow var(--tb-transition), background var(--tb-transition);
+}
+
+.tb-plan-card--featured .tb-plan-cta:hover {
+    box-shadow: 0 16px 26px -18px rgba(46, 27, 66, 0.9);
+    transform: translateY(-2px);
+}
+
+/* Preço e meta seguem a cor do plano */
+.tb-plan-card--green .tb-plan-price strong,
+.tb-plan-card--green .tb-plan-meta,
+.tb-plan-card--green .tb-plan-discount {
+    color: var(--pallete-third);
 }
 
 @media (max-width: 991px) {

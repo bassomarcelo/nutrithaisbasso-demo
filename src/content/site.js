@@ -15,10 +15,6 @@ export const ADDRESS = {
 export const whatsappLink = (message = "Olá, Thaís! Quero saber mais sobre o seu trabalho.") =>
     `https://api.whatsapp.com/send?1=pt_BR&phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
 
-// Place ID do Google Business de Thaís. As avaliações são buscadas no servidor
-// uma vez ao dia pelo GitHub Actions (scripts/fetch-google-reviews.mjs), que
-// salva em src/content/google-reviews.json. A chave GOOGLE_PLACES_API_KEY fica
-// nos secrets do repositório (Places API New).
 export const GOOGLE_PLACE_ID = "ChIJT7YbG14ZHJURKHQTWKdohF4";
 
 export const SOCIAL_LINKS = [
@@ -31,77 +27,75 @@ export const SOCIAL_LINKS = [
 export const NAV_LINKS = [
     { name: "Início", to: "/" },
     { name: "Método", to: "/metodo-seja-real-nao-perfeito" },
-    { name: "Consultoria", to: "/consultoria-nutricional-online" },
     { name: "Sobre", to: "/sobre" },
     { name: "Contato", to: "/contato" },
 ];
-
-export const PRICES = {
-    consultoria: "R$ 197,00",
-};
-
-export const PRODUCTS = {
-    consultoria: {
-        name: "Consultoria Online – 30 dias",
-        label: "Consultoria online",
-        description:
-            "Um primeiro direcionamento online para organizar a alimentação, tirar dúvidas e dar o primeiro passo com segurança.",
-        price: PRICES.consultoria,
-        href: "/consultoria-nutricional-online",
-        cta: "Conhecer a consultoria",
-        message: "Olá, Thaís! Quero saber mais sobre a Consultoria Online de 30 dias.",
-    },
-};
 
 export const PLANS = [
     {
         name: "Consulta Inicial",
         label: "Primeiro passo",
-        meta: "60 minutos + retorno",
-        description: "Uma consulta completa com retorno incluído para dar o primeiro passo com direcionamento.",
-        price: "R$ 420,00",
-        note: "à vista ou 2x de R$ 225,00 no cartão",
+        meta: "Consulta de 2h",
+        tone: "neutral",
+        description: "Uma consulta extensa para analisar seus objetivos e hábitos, criar um plano de tratamento personalizado e propor cardápios e trocas inteligentes na sua rotina.",
+        price: "2x de R$ 225,00",
+        note: "ou R$ 420,00 à vista",
         cta: "Agendar consulta",
-        message: "Olá, Thaís! Quero agendar a Consulta Inicial (60 minutos + retorno).",
+        message: "Olá, Thaís! Quero agendar a Consulta Inicial.",
     },
     {
-        name: "Programa 4 consultas",
-        label: "Programa",
+        name: "Acompanhamento",
+        label: "Mais escolhido",
         meta: "5 consultas",
-        forWho: [
-            "Quer começar com direcionamento",
-            "Precisa de apoio para manter constância",
-            "Busca organizar a alimentação e sustentar resultados",
+        tone: "violet",
+        featured: true,
+        includes: [
+            "5 consultas completas",
+            "Análise de composição corporal (bipedância)",
+            "Acompanhamento e requisição de exames laboratoriais",
+            "Plano de tratamento personalizado, cardápios e receitas",
         ],
-        allows: [
-            "Organização alimentar",
-            "Ajustes progressivos da rotina",
-            "Identificação de gatilhos",
-        ],
-        price: "R$ 1.932,00",
-        note: "ou em até 6x de R$ 322,00",
-        discount: "10% off no pagamento à vista",
+        price: "6x de R$ 322,00",
+        note: "ou R$ 1.932,00 à vista",
         cta: "Quero este programa",
-        message: "Olá, Thaís! Quero saber mais sobre o Programa de 4 consultas.",
+        message: "Olá, Thaís! Quero saber mais sobre o Acompanhamento de 5 encontros.",
     },
     {
-        name: "Programa 10 consultas",
+        name: "Acompanhamento Completo",
         label: "Completo",
         meta: "10 consultas",
-        forWho: [
-            "Já tentou outras abordagens e não conseguiu manter resultados",
-            "Quer um acompanhamento mais profundo e contínuo com TODAS as fases do método",
+        tone: "green",
+        featured: true,
+        includes: [
+            "10 consultas nutricionais completas",
+            "Planilha com metas trimestrais",
+            "Acesso à plataforma Seja Real, Não Perfeito por 12 meses",
+            "Fase extra de MANUTENÇÃO, com consulta extra de 30 min",
         ],
-        allows: [
-            "Consolidação de hábitos",
-            "Construção de autonomia",
-            "Prevenção de recaídas",
-        ],
-        price: "R$ 3.552,00",
-        note: "ou em até 12x de R$ 296,00",
-        discount: "10% off no pagamento à vista",
+        price: "12x de R$ 296,00",
+        note: "ou R$ 3.552,00 à vista",
         cta: "Quero este programa",
-        message: "Olá, Thaís! Quero saber mais sobre o Programa de 10 consultas.",
+        message: "Olá, Thaís! Quero saber mais sobre o Acompanhamento Completo de 10 encontros.",
+    },
+];
+
+export const MODALITIES = [
+    {
+        key: "presencial",
+        icon: "fa-map-marker-alt",
+        title: "Presencial",
+        meta: "Consultório em Carlos Barbosa/RS",
+        text: "Um encontro de perto, no consultório, com avaliação física completa e escuta atenta.",
+        items: ["Análise de composição corporal", "Acompanhamento com exames", "Planos personalizados"],
+    },
+    {
+        key: "online",
+        icon: "fa-video",
+        title: "Online",
+        meta: "Por videochamada",
+        tag: "Onde você estiver",
+        text: "O mesmo método e a mesma profundidade de avaliação, sem sair de casa.",
+        items: ["Atende todo o Brasil e o exterior", "Avaliação por fotos e medidas", "Plano e cardápios individualizados"],
     },
 ];
 
@@ -154,18 +148,3 @@ export const HOME_FAQ = [
             "Os valores são sempre visíveis aqui no site. O pagamento pode ser feito via PIX, débito, crédito ou link de pagamento. Entre em contato para verificar as condições de parcelamento.",
     },
 ];
-
-export const FAQ = {
-    consultoria: [
-        {
-            question: "Como funciona a consultoria online?",
-            answer:
-                "Você preenche um questionário antes do encontro, conversamos por videochamada e recebe um plano alimentar personalizado, com orientações e cardápios ilustrados para os 30 dias.",
-        },
-        {
-            question: "Preciso ter exames recentes?",
-            answer:
-                "Não é obrigatório, mas se você tiver exames recentes, eles ajudam a individualizar as orientações. Também posso solicitar exames quando fizer sentido para o seu caso.",
-        },
-    ],
-};

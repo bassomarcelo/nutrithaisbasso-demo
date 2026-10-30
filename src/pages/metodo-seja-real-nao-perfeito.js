@@ -69,8 +69,8 @@ export default function Metodo() {
                     Quero aplicar o método com você
                     <i className="fas fa-arrow-right" aria-hidden="true" />
                 </a>
-                <Link className="tb-btn tb-btn--ghost" to="/consultoria-nutricional-online">
-                    Ver a consultoria
+                <Link className="tb-btn tb-btn--ghost" to="/#atendimento">
+                    Ver formas de atendimento
                 </Link>
             </PageHero>
 
@@ -99,7 +99,7 @@ export default function Metodo() {
                                     “Não existe vida perfeita. Existe a vida que você tem — e o cuidado que cabe nela.”
                                 </p>
                                 <p className="tb-small" style={{ marginTop: 22 }}>
-                                    Thaís Basso, nutricionista funcional e comportamental
+                                    Thaís Basso, nutricionista clínica e comportamental
                                 </p>
                             </div>
                         </Reveal>
@@ -180,7 +180,7 @@ export default function Metodo() {
                 text="O método ganha vida quando sai do papel. Vamos olhar para a sua realidade e construir, juntas, o próximo passo possível."
             >
                 <a
-                    className="tb-btn tb-btn--green"
+                    className="tb-btn tb-btn--whatsapp"
                     href={whatsappLink("Olá, Thaís! Quero aplicar o Método Seja Real, Não Perfeito.")}
                     target="_blank"
                     rel="noreferrer"
@@ -188,8 +188,8 @@ export default function Metodo() {
                     <i className="fab fa-whatsapp" aria-hidden="true" />
                     Falar no WhatsApp
                 </a>
-                <Link className="tb-btn tb-btn--ghost" to="/consultoria-nutricional-online">
-                    Ver a consultoria
+                <Link className="tb-btn tb-btn--ghost" to="/#atendimento">
+                    Ver formas de atendimento
                 </Link>
             </CtaBanner>
         </Layout>

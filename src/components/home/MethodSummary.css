@@ -60,7 +60,7 @@
 
 .tb-method-card:hover .tb-method-card-icon {
     background: var(--pallete-third);
-    color: #2f4d12;
+    color: var(--pallete-second);
     transform: scale(1.06);
 }
 

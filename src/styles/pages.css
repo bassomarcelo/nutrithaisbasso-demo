@@ -225,92 +225,65 @@
 /* Formação (Sobre) */
 .tb-formation {
     display: grid;
-    gap: 16px;
-    max-width: 860px;
+    max-width: 820px;
     margin: 0 auto;
 }
 
 .tb-formation-item {
-    padding: clamp(20px, 3vw, 28px) clamp(22px, 3.2vw, 34px);
-    border: 1px solid var(--tb-line);
-    border-radius: var(--tb-radius);
-    background: var(--tb-surface);
-    box-shadow: 0 12px 32px -30px rgba(114, 59, 90, 0.45);
-    transition: border-color var(--tb-transition), box-shadow var(--tb-transition), transform var(--tb-transition);
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr);
+    gap: 4px 28px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--tb-line);
 }
 
-.tb-formation-item:hover {
-    border-color: rgba(114, 59, 90, 0.28);
-    box-shadow: var(--tb-shadow-soft);
-    transform: translateY(-3px);
+.tb-formation-item:first-child {
+    padding-top: 0;
 }
 
-.tb-formation-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 10px 18px;
-    margin-bottom: 10px;
-}
-
-.tb-formation-head h3 {
-    margin: 0;
-    font-family: var(--main-font);
-    font-size: clamp(1.06rem, 1.6vw, 1.24rem);
-    font-weight: 700;
-    line-height: 1.4;
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--pallete-fisrt);
+.tb-formation-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
 }
 
 .tb-formation-period {
-    display: inline-flex;
-    flex: 0 0 auto;
-    align-items: center;
-    gap: 7px;
-    padding: 6px 13px;
-    border-radius: 999px;
-    background: var(--pallete-second);
-    color: var(--pallete-fisrt);
+    color: var(--tb-muted);
     font-family: var(--second-font);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     white-space: nowrap;
 }
 
-.tb-formation-period i {
-    font-size: 0.66rem;
-}
-
-.tb-formation-item--ongoing .tb-formation-period {
-    background: var(--pallete-third);
-    color: var(--pallete-second);
+.tb-formation-item h3 {
+    margin: 0;
+    color: var(--pallete-fisrt);
+    font-family: var(--main-font);
+    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
 }
 
 .tb-formation-institution {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin: 0 0 10px;
-    color: var(--pallete-fisrt);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.tb-formation-institution i {
-    color: var(--pallete-third);
-    font-size: 0.84rem;
-}
-
-.tb-formation-text {
+    grid-column: 2;
     margin: 0;
     color: var(--tb-muted);
-    font-size: 0.92rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 575px) {
+    .tb-formation-item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+        padding: 16px 0;
+    }
+
+    .tb-formation-institution {
+        grid-column: 1;
+    }
 }
 
 /* Preços */
@@ -423,34 +396,38 @@
 /* Números / prova social */
 .tb-stats {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: clamp(32px, 5vw, 52px);
+    gap: 12px;
+    margin: clamp(26px, 4vw, 32px) 0 0;
+    padding: 0;
+    list-style: none;
 }
 
 .tb-stat {
-    padding: 24px;
-    border-radius: var(--tb-radius);
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    text-align: center;
-    backdrop-filter: blur(6px);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: var(--tb-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.tb-stat i {
+    flex: 0 0 18px;
+    margin-top: 4px;
+    color: var(--pallete-fisrt);
+    font-size: 0.82rem;
+}
+
+.tb-stat p {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 .tb-stat strong {
-    display: block;
-    margin-bottom: 4px;
     color: var(--pallete-fisrt);
-    font-family: var(--titles-font);
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
-    font-weight: 400;
-    line-height: 1;
-}
-
-.tb-stat span {
-    color: var(--tb-muted);
-    font-size: 0.82rem;
-    line-height: 1.4;
+    font-weight: 700;
 }
 
 /* Lista de etapas compacta */
@@ -505,8 +482,7 @@
 @media (max-width: 575px) {
     .tb-grid--2,
     .tb-grid--3,
-    .tb-grid--4,
-    .tb-stats {
+    .tb-grid--4 {
         grid-template-columns: minmax(0, 1fr);
     }
 

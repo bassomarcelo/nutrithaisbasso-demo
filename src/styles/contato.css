@@ -10,16 +10,24 @@
     color: inherit;
 }
 
+.tb-contact-cards {
+    gap: clamp(14px, 1.8vw, 20px);
+}
+
+.tb-card.tb-contact-card {
+    padding: clamp(18px, 2.4vw, 25px);
+}
+
 .tb-contact-card-icon {
     display: grid;
     place-items: center;
-    width: 56px;
-    height: 56px;
-    margin-bottom: 22px;
-    border-radius: 18px;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 14px;
+    border-radius: 14px;
     background: var(--pallete-second);
     color: var(--pallete-fisrt);
-    font-size: 1.35rem;
+    font-size: 1.12rem;
     transition: transform var(--tb-transition), background var(--tb-transition), color var(--tb-transition);
 }
 
@@ -33,8 +41,15 @@
 }
 
 .tb-contact-card--instagram .tb-contact-card-icon {
-    background: rgba(222, 208, 231, 0.2);
-    color: var(--pallete-fisrt);
+    background: rgba(214, 41, 118, 0.1);
+}
+
+.tb-contact-card--instagram .tb-contact-card-icon i {
+    background: linear-gradient(45deg, #feda75 0%, #fa7e1e 25%, #d62976 55%, #962fbf 80%, #4f5bd5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .tb-contact-card--email .tb-contact-card-icon {
@@ -43,7 +58,7 @@
 }
 
 .tb-contact-card-label {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     color: var(--pallete-fisrt);
     font-family: var(--second-font);
     font-size: 0.74rem;
@@ -52,7 +67,7 @@
 }
 
 .tb-contact-card strong {
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: var(--pallete-fisrt);
     font-size: 1.05rem;
     font-weight: 700;
@@ -69,7 +84,7 @@
     display: inline-flex;
     gap: 8px;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 14px;
     color: var(--pallete-fisrt);
     font-size: 0.82rem;
     font-weight: 700;
@@ -90,14 +105,10 @@
     align-items: center;
 }
 
-.tb-contact-info .tb-lead {
-    margin-bottom: 26px;
-}
-
 .tb-contact-info-block {
     display: flex;
     gap: 14px;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 18px;
 }
 

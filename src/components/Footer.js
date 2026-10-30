@@ -30,7 +30,10 @@ export default function Footer() {
                         <h3>Serviços</h3>
                         <ul>
                             <li>
-                                <Link to="/consultoria-nutricional-online">Consultoria Online – 30 dias</Link>
+                                <Link to="/#atendimento">Atendimento presencial e online</Link>
+                            </li>
+                            <li>
+                                <Link to="/#planos">Planos e valores</Link>
                             </li>
                         </ul>
                         <div className="tb-footer-social">

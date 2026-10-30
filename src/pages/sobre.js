@@ -11,32 +11,23 @@ import { INSTAGRAM, whatsappLink } from "../content/site";
 const FORMATION = [
     {
         period: "2019–2021",
-        icon: "fas fa-graduation-cap",
         title: "Pós-graduação em Nutrição Funcional e Comportamento Alimentar",
         institution: "UCS – Universidade de Caxias do Sul",
-        text: "400 horas de formação com foco na avaliação integrada do indivíduo e na mudança de comportamento alimentar.",
     },
     {
         period: "2021",
-        icon: "fas fa-award",
         title: "Especialização em Emagrecimento e Saúde",
         institution: "NBE Academy",
-        text: "180 horas dedicadas às diretrizes atuais de prevenção e tratamento da obesidade e comorbidades.",
     },
     {
         period: "2012–2018",
-        icon: "fas fa-landmark",
         title: "Graduação em Nutrição",
         institution: "UCS – Universidade de Caxias do Sul",
-        text: "Formação generalista com práticas em saúde pública, clínica, alimentação coletiva e nutrição esportiva.",
     },
     {
         period: "Contínuo",
-        ongoing: true,
-        icon: "fas fa-book-open",
         title: "Mais de 10 cursos de especialização",
         institution: "Saúde intestinal, nutrição vegetariana, saúde da mulher e fitoterapia",
-        text: "Atualização constante para oferecer um cuidado integrado e baseado em evidências.",
     },
 ];
 
@@ -61,9 +52,9 @@ export default function Sobre() {
     return (
         <Layout>
             <PageHero
-                eyebrow="Sobre mim · CRN-2 16231D"
+                eyebrow="Conheça mais sobre mim"
                 title="Thaís Basso"
-                intro="Nutricionista funcional e comportamental. Uma trajetória construída entre a ciência da nutrição e a escuta do que faz sentido para a vida real das pessoas."
+                intro="Nutricionista clínica e comportamental. Uma trajetória construída entre a ciência da nutrição e a escuta do que faz sentido para a vida real das pessoas."
                 image={<GatsbyImage image={portrait} alt="Thaís Basso sorrindo, sentada junto à janela" />}
             >
                 <a
@@ -104,20 +95,20 @@ export default function Sobre() {
                                 essa visão que guia o meu trabalho.
                             </p>
 
-                            <div className="tb-stats">
-                                <div className="tb-stat">
-                                    <strong>+5.000</strong>
-                                    <span>atendimentos no Brasil e no mundo</span>
-                                </div>
-                                <div className="tb-stat">
-                                    <strong>5</strong>
-                                    <span>anos de experiência clínica</span>
-                                </div>
-                                <div className="tb-stat">
-                                    <strong>4+</strong>
-                                    <span>formações em nutrição</span>
-                                </div>
-                            </div>
+                            <ul className="tb-stats">
+                                <li className="tb-stat">
+                                    <i className="fas fa-users" aria-hidden="true" />
+                                    <p>
+                                        <strong>+5.000</strong> atendimentos no Brasil e no mundo
+                                    </p>
+                                </li>
+                                <li className="tb-stat">
+                                    <i className="fas fa-stethoscope" aria-hidden="true" />
+                                    <p>
+                                        <strong>5</strong> anos de experiência clínica
+                                    </p>
+                                </li>
+                            </ul>
                         </Reveal>
 
                         <Reveal className="tb-split-media" delay={120}>
@@ -138,28 +129,15 @@ export default function Sobre() {
                     <Reveal className="tb-section-heading tb-section-heading--center">
                         <span className="tb-eyebrow">Formação</span>
                         <h2>Ciência e atualização constante</h2>
-                        <p>Como uma profissional da saúde, me baseio em estudos e análises com base científica para construir meu método e minha abordagem. Conheça um pouco mais sobre a minha formação profissional e educacional para cuidar, com responsabilidade, dos meus pacientes. Sem modismos e sem promessas vazias.</p>
+                        <p>Como uma profissional da saúde, baseio-me em estudos e análises com base científica para construir meu método e minha abordagem. Conheça um pouco mais sobre a minha formação profissional para cuidar, com responsabilidade, dos meus pacientes.</p>
                     </Reveal>
 
                     <div className="tb-formation">
                         {FORMATION.map((item, index) => (
-                            <Reveal
-                                className={`tb-formation-item${item.ongoing ? " tb-formation-item--ongoing" : ""}`}
-                                key={item.title}
-                                delay={index * 70}
-                            >
-                                <div className="tb-formation-head">
-                                    <h3>{item.title}</h3>
-                                    <span className="tb-formation-period">
-                                        <i className="far fa-calendar" aria-hidden="true" />
-                                        {item.period}
-                                    </span>
-                                </div>
-                                <p className="tb-formation-institution">
-                                    <i className={item.icon} aria-hidden="true" />
-                                    {item.institution}
-                                </p>
-                                <p className="tb-formation-text">{item.text}</p>
+                            <Reveal className="tb-formation-item" key={item.title} delay={index * 70}>
+                                <span className="tb-formation-period">{item.period}</span>
+                                <h3>{item.title}</h3>
+                                <p className="tb-formation-institution">{item.institution}</p>
                             </Reveal>
                         ))}
                     </div>
@@ -208,7 +186,7 @@ export default function Sobre() {
                 text="Se a minha forma de olhar para a saúde fizer sentido para você, me chame no WhatsApp. Vamos encontrar o seu próximo passo."
             >
                 <a
-                    className="tb-btn tb-btn--green"
+                    className="tb-btn tb-btn--whatsapp"
                     href={whatsappLink("Olá, Thaís! Quero conversar sobre o atendimento nutricional.")}
                     target="_blank"
                     rel="noreferrer"
@@ -216,8 +194,8 @@ export default function Sobre() {
                     <i className="fab fa-whatsapp" aria-hidden="true" />
                     Falar no WhatsApp
                 </a>
-                <Link className="tb-btn tb-btn--ghost" to="/consultoria-nutricional-online">
-                    Ver a consultoria
+                <Link className="tb-btn tb-btn--ghost" to="/#atendimento">
+                    Ver formas de atendimento
                 </Link>
             </CtaBanner>
         </Layout>
@@ -227,7 +205,7 @@ export default function Sobre() {
 export const Head = () => (
     <Seo
         path="/sobre"
-        title="Sobre Thaís Basso | Nutricionista Funcional e Comportamental"
-        description="Conheça Thaís Basso, nutricionista funcional e comportamental (CRN-2 16231D), a criação do Método Seja Real, Não Perfeito e sua visão sobre saúde."
+        title="Sobre Thaís Basso | Nutricionista clínica e comportamental"
+        description="Conheça Thaís Basso, nutricionista clínica e comportamental (CRN-2 16231D), a criação do Método Seja Real, Não Perfeito e sua visão sobre saúde."
     />
 );

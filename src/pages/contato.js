@@ -13,7 +13,7 @@ const CONTACT_CARDS = [
         value: PHONE_DISPLAY,
         text: "A forma mais rápida de falar comigo.",
         href: whatsappLink(),
-        cta: "Abrir conversa",
+        // cta: "Abrir conversa",
         tone: "whatsapp",
     },
     {
@@ -22,7 +22,7 @@ const CONTACT_CARDS = [
         value: "@nutrithaisbasso",
         text: "Conteúdos, bastidores e rotina do consultório.",
         href: INSTAGRAM,
-        cta: "Visitar perfil",
+        // cta: "Visitar perfil",
         tone: "instagram",
     },
     {
@@ -31,50 +31,41 @@ const CONTACT_CARDS = [
         value: EMAIL,
         text: "Para assuntos profissionais e parcerias.",
         href: `mailto:${EMAIL}`,
-        cta: "Enviar e-mail",
+        // cta: "Enviar e-mail",
         tone: "email",
     },
 ];
 
 export default function Contato() {
+    const cards = (
+        <div className="tb-grid tb-grid--3 tb-contact-cards">
+            {CONTACT_CARDS.map((card, index) => (
+                <Reveal key={card.label} delay={index * 80}>
+                    <a className={`tb-card tb-contact-card tb-contact-card--${card.tone}`} href={card.href} target="_blank" rel="noreferrer">
+                        <span className="tb-contact-card-icon">
+                            <i className={card.icon} aria-hidden="true" />
+                        </span>
+                        <span className="tb-contact-card-label">{card.label}</span>
+                        <strong>{card.value}</strong>
+                        <p>{card.text}</p>
+                        {/* <span className="tb-contact-card-cta">
+                            {card.cta}
+                            <i className="fas fa-arrow-right" aria-hidden="true" />
+                        </span> */}
+                    </a>
+                </Reveal>
+            ))}
+        </div>
+    );
+
     return (
         <Layout>
             <PageHero
                 eyebrow="Contato"
                 title="Vamos conversar?"
                 intro="Tire suas dúvidas, agende sua consulta ou me conte o que você está buscando. Será um prazer caminhar com você."
-            >
-                <a className="tb-btn tb-btn--whatsapp" href={whatsappLink()} target="_blank" rel="noreferrer">
-                    <i className="fab fa-whatsapp" aria-hidden="true" />
-                    Falar no WhatsApp
-                </a>
-                <a className="tb-btn tb-btn--ghost" href={ADDRESS.maps} target="_blank" rel="noreferrer">
-                    Ver localização
-                </a>
-            </PageHero>
-
-            <section className="tb-section">
-                <div className="container-custom">
-                    <div className="tb-grid tb-grid--3">
-                        {CONTACT_CARDS.map((card, index) => (
-                            <Reveal key={card.label} delay={index * 80}>
-                                <a className={`tb-card tb-contact-card tb-contact-card--${card.tone}`} href={card.href} target="_blank" rel="noreferrer">
-                                    <span className="tb-contact-card-icon">
-                                        <i className={card.icon} aria-hidden="true" />
-                                    </span>
-                                    <span className="tb-contact-card-label">{card.label}</span>
-                                    <strong>{card.value}</strong>
-                                    <p>{card.text}</p>
-                                    <span className="tb-contact-card-cta">
-                                        {card.cta}
-                                        <i className="fas fa-arrow-right" aria-hidden="true" />
-                                    </span>
-                                </a>
-                            </Reveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                after={cards}
+            />
 
             <section className="tb-section tb-section--lavender">
                 <div className="container-custom">
@@ -82,7 +73,6 @@ export default function Contato() {
                         <Reveal className="tb-contact-info">
                             <span className="tb-eyebrow">Consultório</span>
                             <h2>Onde me encontrar</h2>
-                            <p className="tb-lead">Atendimento presencial em Carlos Barbosa/RS e online para todo o Brasil.</p>
 
                             <div className="tb-contact-info-block">
                                 <i className="fas fa-map-marker-alt" aria-hidden="true" />

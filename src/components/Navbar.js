@@ -39,7 +39,7 @@ export default function Navbar(props) {
             <nav className={`navbar tb-navbar fixed-top ${scrolled ? "is-scrolled" : ""} ${props.page || ""}`.trim()} aria-label="Navegação principal">
                 <div className="container-custom tb-navbar-inner">
                     <Link to="/" className="tb-navbar-brand" aria-label="Página inicial - Thaís Basso">
-                        <img src="/icons/logo-with-name.png" alt="Thaís Basso Nutricionista" />
+                        <img src="/icons/logo.png" alt="Thaís Basso Nutricionista" />
                     </Link>
 
                     <button

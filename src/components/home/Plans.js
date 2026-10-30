@@ -17,18 +17,33 @@ export default function Plans() {
 
                 <div className="tb-plans-grid">
                     {PLANS.map((plan, index) => (
-                        <Reveal className="tb-plan-card" key={plan.name} delay={index * 100}>
+                        <Reveal
+                            className={`tb-plan-card tb-plan-card--${plan.tone}${plan.featured ? " tb-plan-card--featured" : ""}`}
+                            key={plan.name}
+                            delay={index * 100}
+                        >
                             <div className="tb-plan-head">
-                                <span className="tb-icon-bubble tb-plan-icon">
+                                <span className={`tb-icon-bubble tb-plan-icon tb-plan-icon--${plan.tone}`}>
                                     <i className={`fas ${ICONS[index]}`} aria-hidden="true" />
                                 </span>
-                                <span className="tb-tag tb-tag--violet">{plan.label}</span>
+                                <span className={`tb-tag tb-tag--${plan.tone}`}>{plan.label}</span>
                             </div>
 
                             <h3>{plan.name}</h3>
                             <span className="tb-plan-meta">{plan.meta}</span>
 
                             {plan.description && <p className="tb-plan-description">{plan.description}</p>}
+
+                            {plan.includes && (
+                                <ul className="tb-plan-includes">
+                                    {plan.includes.map(item => (
+                                        <li key={item}>
+                                            <i className="fas fa-check" aria-hidden="true" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
 
                             {plan.forWho && (
                                 <div className="tb-plan-block">

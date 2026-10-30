@@ -2,7 +2,7 @@ import React from "react";
 import Reveal from "./Reveal";
 import "./PageHero.css";
 
-export default function PageHero({ eyebrow, title, intro, image, imageAlt = "", children, compact = false, className = "" }) {
+export default function PageHero({ eyebrow, title, intro, image, imageAlt = "", children, after, compact = false, className = "" }) {
     return (
         <section className={`tb-page-hero ${compact ? "tb-page-hero--compact" : ""} ${className}`.trim()}>
             <span className="tb-page-hero-blob tb-page-hero-blob--one" aria-hidden="true" />
@@ -25,6 +25,8 @@ export default function PageHero({ eyebrow, title, intro, image, imageAlt = "", 
                         </Reveal>
                     )}
                 </div>
+
+                {after && <div className="tb-page-hero-after">{after}</div>}
             </div>
         </section>
     );

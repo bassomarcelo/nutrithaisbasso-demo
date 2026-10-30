@@ -90,9 +90,9 @@ module.exports = {
     ],
 
     siteMetadata: {
-        title: "Thaís Basso | Nutricionista Comportamental",
+        title: "Thaís Basso | Nutricionista Clínica e Comportamental",
         description:
-            "Nutricionista funcional e comportamental. Acompanhamento nutricional para hábitos reais, com foco na mudança de hábitos, sem culpa e sem perfeição. Presencial em Carlos Barbosa/RS e online.",
+            "Nutricionista clínica e comportamental. Acompanhamento nutricional para hábitos reais, sem culpa e sem perfeição. Atendimento presencial em Carlos Barbosa/RS e consulta nutricional online para todo o Brasil e o exterior.",
         canonical: siteUrl,
         siteUrl: siteUrl,
         isDemo: isDemo,

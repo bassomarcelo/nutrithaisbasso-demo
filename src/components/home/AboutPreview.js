@@ -29,7 +29,7 @@ export default function AboutPreview() {
                         </div>
                         <div className="tb-about-preview-badge">
                             <strong>CRN-2 16231D</strong>
-                            <span>Nutricionista funcional e comportamental</span>
+                            <span>Nutricionista clínica e comportamental</span>
                         </div>
                     </Reveal>
 
@@ -38,7 +38,7 @@ export default function AboutPreview() {
                         <h2>Nutrição com escuta, ciência e realidade</h2>
                         
                         <p className="tb-lead">
-                            Sou a Thaís Basso, nutricionista clínica, especialista em Nutrição Funcional, Comportamento Alimentar, Emagredimento e Saúde. Criadora do método Seja Real, Não Perfeito, que integra ciência, comportamento alimentar, neurociência dos hábitos e estilo de vida.  
+                            Sou a Thaís Basso, nutricionista clínica, especialista em Nutrição Funcional, Comportamento Alimentar, Emagredimento e Saúde, pós graduanda em Nutrição Clínica. Criadora do método Seja Real, Não Perfeito, que integra ciência, comportamento alimentar, neurociência dos hábitos e estilo de vida.  
                         </p>
                         <p>
                             Com mais de 5.000 atendimentos no Brasil e no exterior, atuo com uma nutrição acolhedora, realisa e sustentável, focada em mudanças de comportamento e na sua qualidade de vida.

@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import Reveal from "../common/Reveal";
@@ -37,7 +37,7 @@ export default function Hero() {
                 <div className="tb-hero-grid">
                     <Reveal className="tb-hero-copy">
                         <h1 className="tb-hero-title">
-                            <span className="tb-hero-title-top">Thaís Basso · Nutricionista Comportamental</span>
+                            <span className="tb-hero-title-top">Thaís Basso · Nutricionista Clínica</span>
                             Nutrição para <em>hábitos reais</em>
                         </h1>
                         <p className="tb-hero-subtitle">Saúde sem dietas desnecessárias, sem culpa e com resultados reais.</p>
@@ -47,10 +47,10 @@ export default function Hero() {
                         </p>
 
                         <div className="tb-actions tb-hero-actions">
-                            <Link className="tb-btn tb-btn--primary" to="/consultoria-nutricional-online">
-                                Conhecer a consultoria
+                            <a className="tb-btn tb-btn--primary" href="#atendimento">
+                                Presencial ou online
                                 <i className="fas fa-arrow-right" aria-hidden="true" />
-                            </Link>
+                            </a>
                             <a className="tb-btn tb-btn--ghost" href="#metodo">
                                 Conhecer o método
                             </a>
