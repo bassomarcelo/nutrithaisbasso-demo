@@ -1,7 +1,7 @@
 {
     "rating": 5,
     "userRatingCount": 153,
-    "fetchedAt": "2026-10-29T15:59:23.382Z",
+    "fetchedAt": "2026-10-30T15:46:52.445Z",
     "reviews": [
         {
             "name": "Karine Pradella",
@@ -18,6 +18,13 @@
             "photo": null
         },
         {
+            "name": "Mariele Baldasso",
+            "text": "Participei do desafio de 21 dias e, mesmo já tendo uma rotina bem estruturada de hábitos saudáveis há anos, achei a proposta muito valiosa.\n\nFoi uma experiência importante para reforçar práticas que muitas vezes a gente faz no automático, mas que precisam de constância e intenção. Além disso, o acompanhamento e a forma como tudo foi conduzido fazem toda diferença, pois trazem mais consciência e organização no dia a dia.\n\nAcredito que para quem está começando, o desafio tem um potencial ainda maior, porque direciona de forma simples e aplicável. E mesmo para quem já vive esse estilo de vida, sempre existem pontos para ajustar, revisar e fortalecer. 🤍",
+            "rating": 5,
+            "relativeTime": "6 meses atrás",
+            "photo": null
+        },
+        {
             "name": "Carolina Millan",
             "text": "A Thais me ajudou demais a compreender melhor meu processo, a conhecer como meu corpo funciona e seguir a melhor estratégia para lidar com aquilo que me impedia ser mais funcional e saudável, sem me atropelar na tentativa. Meus exames de sangue melhoraram muito, valeu muito a pena o tempo que ela me acompanhou!",
             "rating": 5,
@@ -27,13 +34,6 @@
         {
             "name": "Grazielli Padilha Vieira",
             "text": "Eu faço acompanhamento online com a Thais ha mais de 6 meses. Tem sido uma experiencia otima e me ajudou a melhorar minha saude intestinal, minha rotina e ter mais consciência sobre a forma como me alimento. O que gosto aqui é que ela foca em nutrir, desinflamar e mudar hábitos sem receitas prontas ou formulas magicas.\nSou alérgica ao glúten e tomar ciencia de gatilhos comportamentais, aprender a escolher melhor os alimentos e encontrar um caminho q funciona pra mim. Thais é uma profissional humanizada, gentil e super aberta a ouvir o paciente. Adoro nossos encontros e esse tem sido um processo leve e dinâmico de  mudanças de habitos e comportamentos. Obriigada Nutri Thais!",
-            "rating": 5,
-            "relativeTime": "6 meses atrás",
-            "photo": null
-        },
-        {
-            "name": "Mariele Baldasso",
-            "text": "Participei do desafio de 21 dias e, mesmo já tendo uma rotina bem estruturada de hábitos saudáveis há anos, achei a proposta muito valiosa.\n\nFoi uma experiência importante para reforçar práticas que muitas vezes a gente faz no automático, mas que precisam de constância e intenção. Além disso, o acompanhamento e a forma como tudo foi conduzido fazem toda diferença, pois trazem mais consciência e organização no dia a dia.\n\nAcredito que para quem está começando, o desafio tem um potencial ainda maior, porque direciona de forma simples e aplicável. E mesmo para quem já vive esse estilo de vida, sempre existem pontos para ajustar, revisar e fortalecer. 🤍",
             "rating": 5,
             "relativeTime": "6 meses atrás",
             "photo": null
