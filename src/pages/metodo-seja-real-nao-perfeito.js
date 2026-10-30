@@ -69,9 +69,6 @@ export default function Metodo() {
                     Quero aplicar o método com você
                     <i className="fas fa-arrow-right" aria-hidden="true" />
                 </a>
-                <Link className="tb-btn tb-btn--ghost" to="/#atendimento">
-                    Ver formas de atendimento
-                </Link>
             </PageHero>
 
             <section className="tb-section">

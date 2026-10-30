@@ -61,7 +61,7 @@ export const PLANS = [
         message: "Olá, Thaís! Quero saber mais sobre o Acompanhamento de 5 encontros.",
     },
     {
-        name: "Acompanhamento Completo",
+        name: "Tratamento Completo",
         label: "Completo",
         meta: "10 consultas",
         tone: "green",

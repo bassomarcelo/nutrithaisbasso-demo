@@ -25,7 +25,6 @@ export default function Home() {
             <Faq items={HOME_FAQ} title="Perguntas frequentes" subtitle="Se a sua dúvida não estiver aqui, me chame no WhatsApp. Será um prazer conversar." />
 
             <CtaBanner
-                eyebrow="Vamos começar?"
                 title="Seu próximo passo pode ser mais leve"
                 text="Me conte o que você está buscando. Vamos encontrar juntas um caminho possível para a sua rotina, com saúde e sem culpa."
             >

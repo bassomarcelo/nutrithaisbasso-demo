@@ -181,7 +181,6 @@ export default function Sobre() {
             </section>
 
             <CtaBanner
-                eyebrow="Vamos conversar?"
                 title="Conheça meu trabalho de perto"
                 text="Se a minha forma de olhar para a saúde fizer sentido para você, me chame no WhatsApp. Vamos encontrar o seu próximo passo."
             >
