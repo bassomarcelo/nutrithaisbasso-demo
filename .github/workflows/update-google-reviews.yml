@@ -1,4 +1,4 @@
-# Busca as avaliações do Google uma vez por dia e commita o resultado
+# Busca as avaliações do Google uma vez por mês e commita o resultado
 # (src/content/google-reviews.json), que o site lê em tempo de build.
 # Configure os secrets GOOGLE_PLACES_API_KEY e GOOGLE_PLACE_ID no repositório.
 
@@ -6,8 +6,8 @@ name: Update Google reviews
 
 on:
   schedule:
-    # 09:00 UTC = 06:00 em Brasília (UTC-3)
-    - cron: "0 9 * * *"
+    # Todo dia 1º, 09:00 UTC = 06:00 em Brasília (UTC-3)
+    - cron: "0 9 1 * *"
   workflow_dispatch:
 
 permissions:
