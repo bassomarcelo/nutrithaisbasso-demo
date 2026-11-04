@@ -21,7 +21,7 @@ export default function Atendimento() {
 
                 <div className="tb-atendimento-grid">
                     {MODALITIES.map((modality, index) => (
-                        <Reveal className="tb-atendimento-card" key={modality.key} delay={index * 100}>
+                        <Reveal className="tb-atendimento-card" key={modality.key} delay={index * 100} threshold={0}>
                             <div className="tb-atendimento-head">
                                 <span className="tb-atendimento-icon">
                                     <i className={`fas ${modality.icon}`} aria-hidden="true" />

@@ -105,10 +105,35 @@
     display: none;
 }
 
+/* Em telas pequenas os cards viram carrossel de rolagem com snap */
 @media (max-width: 767px) {
     .tb-atendimento-grid {
-        grid-template-columns: minmax(0, 1fr);
-        max-width: 480px;
+        display: flex;
+        gap: 18px;
+        max-width: none;
+        margin: 0 calc(-1 * clamp(20px, 4vw, 36px));
+        padding: 6px clamp(20px, 4vw, 36px) 20px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tb-atendimento-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Espaços invisíveis: o primeiro e o último card também centralizam */
+    .tb-atendimento-grid::before,
+    .tb-atendimento-grid::after {
+        content: '';
+        flex: 0 0 max(0px, calc(50% - min(78vw, 320px) / 2 - 18px));
+    }
+
+    .tb-atendimento-card {
+        flex: 0 0 min(78vw, 320px);
+        scroll-snap-align: center;
     }
 
     .tb-br--sm {
