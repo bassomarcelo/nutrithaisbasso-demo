@@ -71,36 +71,22 @@ export default function Metodo() {
                 </a>
             </PageHero>
 
-            <section className="tb-section">
+            <section className="tb-section tb-essence-section">
                 <div className="container-custom">
-                    <div className="tb-split">
-                        <Reveal className="tb-split-copy">
-                            <span className="tb-eyebrow">A essência</span>
-                            <h2>Real é possível. Perfeito é uma armadilha.</h2>
-                            <p className="tb-lead">
-                                A busca pela perfeição cria um ciclo: você se cobra, não consegue sustentar, sente culpa e recomeça. O método inverte essa lógica.
-                            </p>
-                            <p>
-                                Aqui, o ponto de partida é a sua vida como ela é. A partir dela, construímos mudanças que fazem sentido, com ciência e acolhimento.
-                                Ser real não é desistir de cuidar; é escolher um caminho que você consegue manter.
-                            </p>
-                            <p>
-                                O resultado não é uma dieta que dura algumas semanas, mas uma relação mais consciente e saudável com a comida e com o seu corpo.
-                            </p>
-                        </Reveal>
-
-                        <Reveal className="tb-split-media" delay={120}>
-                            <div className="tb-card" style={{ padding: "clamp(28px, 4vw, 44px)" }}>
-                                <i className="fas fa-quote-left" style={{ color: "var(--pallete-second)", fontSize: "1.8rem", marginBottom: 18 }} aria-hidden="true" />
-                                <p style={{ fontSize: "clamp(1.3rem, 2.2vw, 1.7rem)", fontFamily: "var(--second-font)", fontWeight: 300, lineHeight: 1.55, color: "var(--pallete-fisrt)" }}>
-                                    “Não existe vida perfeita. Existe a vida que você tem — e o cuidado que cabe nela.”
-                                </p>
-                                <p className="tb-small" style={{ marginTop: 22 }}>
-                                    Thaís Basso, nutricionista clínica e comportamental
-                                </p>
-                            </div>
-                        </Reveal>
-                    </div>
+                    <Reveal className="tb-essence">
+                        <span className="tb-eyebrow">A essência</span>
+                        <h2>Real é possível. <br/>Perfeito é uma armadilha.</h2>
+                        {/* <p className="tb-lead">
+                            A busca pela perfeição cria um ciclo: você se cobra, não consegue sustentar, sente culpa e recomeça. O método inverte essa lógica.
+                        </p> */}
+                        <p>
+                            Aqui, o ponto de partida é a sua vida como ela é. A partir dela, construímos mudanças que fazem sentido, com ciência e acolhimento.
+                            Ser real não é desistir de cuidar; é escolher um caminho que você consegue manter.
+                        </p>
+                        <p>
+                            O resultado não é uma dieta que dura algumas semanas, mas uma relação mais consciente e saudável com a comida e com o seu corpo.
+                        </p>
+                    </Reveal>
                 </div>
             </section>
 
@@ -133,9 +119,9 @@ export default function Metodo() {
                         <span className="tb-eyebrow">Diferenciais</span>
                         <h2>Por que esse método funciona para a vida real</h2>
                     </Reveal>
-                    <div className="tb-grid tb-grid--4">
+                    <div className="tb-grid tb-grid--4 tb-swipe-sm">
                         {DIFFERENTIALS.map((item, index) => (
-                            <Reveal className="tb-card" key={item.title} delay={index * 70}>
+                            <Reveal className="tb-card" key={item.title} delay={index * 70} threshold={0}>
                                 <span className="tb-icon-bubble tb-icon-bubble--violet">
                                     <i className={`fas ${item.icon}`} aria-hidden="true" />
                                 </span>
@@ -157,9 +143,9 @@ export default function Metodo() {
                             come, descansa e vive.
                         </p>
                     </Reveal>
-                    <div className="tb-grid tb-grid--3">
+                    <div className="tb-grid tb-grid--3 tb-swipe-sm">
                         {LIFESTYLE_PILLARS.map((pillar, index) => (
-                            <Reveal className="tb-card tb-card--flat" key={pillar.title} delay={index * 50}>
+                            <Reveal className="tb-card tb-card--flat" key={pillar.title} delay={index * 50} threshold={0}>
                                 <span className="tb-icon-bubble">
                                     <i className={`fas ${pillar.icon}`} aria-hidden="true" />
                                 </span>

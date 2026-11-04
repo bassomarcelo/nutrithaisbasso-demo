@@ -27,10 +27,10 @@ export default function AboutPreview() {
                         <div className="tb-about-preview-photo">
                             <GatsbyImage image={image} alt="Thaís Basso sorrindo, sentada no consultório" />
                         </div>
-                        <div className="tb-about-preview-badge">
+                        {/* <div className="tb-about-preview-badge">
                             <strong>CRN-2 16231D</strong>
-                            <span>Nutricionista clínica e comportamental</span>
-                        </div>
+                            <span>Nutricionista clínica</span>
+                        </div> */}
                     </Reveal>
 
                     <Reveal className="tb-about-preview-copy" delay={120}>

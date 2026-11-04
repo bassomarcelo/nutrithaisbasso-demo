@@ -100,9 +100,18 @@
     font-size: 0.9rem;
 }
 
+/* Quebra de linha do título apenas em telas pequenas */
+.tb-br--sm {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .tb-atendimento-grid {
         grid-template-columns: minmax(0, 1fr);
         max-width: 480px;
+    }
+
+    .tb-br--sm {
+        display: initial;
     }
 }

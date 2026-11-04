@@ -308,3 +308,37 @@
         max-width: 520px;
     }
 }
+
+/* Em telas pequenas os planos viram carrossel de rolagem com snap,
+   com o card ativo centralizado — inclusive o primeiro e o último,
+   graças aos espaços invisíveis de ponta (::before/::after) */
+@media (max-width: 767px) {
+    .tb-plans-grid {
+        display: flex;
+        gap: 18px;
+        max-width: none;
+        margin: 0 calc(-1 * clamp(20px, 4vw, 36px));
+        padding: 4px clamp(20px, 4vw, 36px) 12px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tb-plans-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tb-plans-grid::before,
+    .tb-plans-grid::after {
+        content: '';
+        /* max() protege contra calc negativo em telas muito estreitas */
+        flex: 0 0 max(0px, calc(50% - min(78vw, 330px) / 2 - 18px));
+    }
+
+    .tb-plan-card {
+        flex: 0 0 min(78vw, 330px);
+        scroll-snap-align: center;
+    }
+}

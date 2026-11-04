@@ -86,12 +86,22 @@
     padding: 4px clamp(20px, 4vw, 36px) 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    /* o card ativo fica centralizado na tela durante o arraste */
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
 }
 
 .tb-testimonials-track::-webkit-scrollbar {
     display: none;
+}
+
+/* Espaços invisíveis nas pontas: o primeiro e o último card
+   também podem alcançar o centro da tela no snap */
+.tb-testimonials-track::before,
+.tb-testimonials-track::after {
+    content: '';
+    /* max() protege contra calc negativo em telas muito estreitas */
+    flex: 0 0 max(0px, calc(50% - clamp(280px, 34vw, 390px) / 2 - 18px));
 }
 
 .tb-testimonial-card {
@@ -102,7 +112,7 @@
     border: 1px solid var(--tb-line);
     border-radius: var(--tb-radius);
     background: var(--tb-cream);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     transition: transform var(--tb-transition), box-shadow var(--tb-transition), border-color var(--tb-transition);
 }
 
@@ -244,6 +254,14 @@
 }
 
 @media (max-width: 575px) {
+    .tb-testimonials-head {
+        justify-content: center;
+    }
+
+    .tb-google-badge {
+        margin-inline: auto;
+    }
+
     .tb-testimonials-hint {
         display: none;
     }
@@ -255,5 +273,10 @@
 
     .tb-testimonial-card {
         flex-basis: 86%;
+    }
+
+    .tb-testimonials-track::before,
+    .tb-testimonials-track::after {
+        flex-basis: max(0px, calc(7% - 18px));
     }
 }

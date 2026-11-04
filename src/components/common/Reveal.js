@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
  * Anima a entrada dos blocos quando eles aparecem na tela.
  * Respeita prefers-reduced-motion através do CSS.
  */
-export default function Reveal({ as: Tag = "div", className = "", delay = 0, children, style, ...rest }) {
+export default function Reveal({ as: Tag = "div", className = "", delay = 0, threshold = 0.12, children, style, ...rest }) {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
 
@@ -26,7 +26,7 @@ export default function Reveal({ as: Tag = "div", className = "", delay = 0, chi
                     }
                 });
             },
-            { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+            { threshold, rootMargin: "0px 0px -48px 0px" }
         );
 
         observer.observe(element);

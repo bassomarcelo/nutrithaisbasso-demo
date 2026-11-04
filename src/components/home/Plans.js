@@ -21,6 +21,7 @@ export default function Plans() {
                             className={`tb-plan-card tb-plan-card--${plan.tone}${plan.featured ? " tb-plan-card--featured" : ""}`}
                             key={plan.name}
                             delay={index * 100}
+                            threshold={0}
                         >
                             <div className="tb-plan-head">
                                 <span className={`tb-icon-bubble tb-plan-icon tb-plan-icon--${plan.tone}`}>

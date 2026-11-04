@@ -34,11 +34,16 @@ const FORMATION = [
 export default function Sobre() {
     const data = useStaticQuery(graphql`
         query SobreImages {
-            portrait: file(relativePath: { eq: "04-2026/IMG_1578.jpg" }) {
+            portrait_banner: file(relativePath: { eq: "04-2026/IMG_1578.jpg" }) {
                 childImageSharp {
                     gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 88)
                 }
             }
+            portrait_final: file(relativePath: { eq: "04-2026/IMG_1544.jpg" }) {
+                childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 88)
+                }
+            }    
             office: file(relativePath: { eq: "fotos-thais/foto-consultorio.png" }) {
                 childImageSharp {
                     gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 88)
@@ -46,7 +51,8 @@ export default function Sobre() {
             }
         }
     `);
-    const portrait = getImage(data.portrait.childImageSharp.gatsbyImageData);
+    const portrait_banner = getImage(data.portrait_banner.childImageSharp.gatsbyImageData);
+    const portrait_final = getImage(data.portrait_final.childImageSharp.gatsbyImageData);
     const office = getImage(data.office.childImageSharp.gatsbyImageData);
 
     return (
@@ -55,7 +61,7 @@ export default function Sobre() {
                 eyebrow="Conheça mais sobre mim"
                 title="Thaís Basso"
                 intro="Nutricionista clínica e comportamental. Uma trajetória construída entre a ciência da nutrição e a escuta do que faz sentido para a vida real das pessoas."
-                image={<GatsbyImage image={portrait} alt="Thaís Basso sorrindo, sentada junto à janela" />}
+                image={<GatsbyImage image={portrait_banner} alt="Thaís Basso sorrindo, sentada junto à janela" />}
             >
                 <a
                     className="tb-btn tb-btn--primary"
@@ -105,7 +111,7 @@ export default function Sobre() {
                                 <li className="tb-stat">
                                     <i className="fas fa-stethoscope" aria-hidden="true" />
                                     <p>
-                                        <strong>5</strong> anos de experiência clínica
+                                        <strong>6</strong> anos de experiência clínica
                                     </p>
                                 </li>
                             </ul>
@@ -168,8 +174,8 @@ export default function Sobre() {
                         </Reveal>
 
                         <Reveal className="tb-split-media" delay={100}>
-                            <div className="tb-media-frame">
-                                <GatsbyImage image={portrait} alt="Thaís Basso sentada junto à janela" />
+                            <div className="tb-media-frame tb-media-frame--shift">
+                                <GatsbyImage image={portrait_final} alt="Thaís Basso sentada junto à janela" />
                                 <span className="tb-media-frame__badge">
                                     <i className="fas fa-seedling" aria-hidden="true" />
                                     Nutrição com escuta

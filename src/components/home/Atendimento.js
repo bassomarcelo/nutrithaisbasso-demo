@@ -9,9 +9,13 @@ export default function Atendimento() {
             <div className="container-custom">
                 <Reveal className="tb-section-heading tb-section-heading--center">
                     <span className="tb-eyebrow">Como funciona</span>
-                    <h2>Presencial ou online, do seu jeito</h2>
+                    <h2>
+                        Presencial ou online,
+                        <br className="tb-br--sm" />
+                        do seu jeito
+                    </h2>
                     <p>
-                        Escolha o formato que cabe melhor na sua rotina.
+                        Escolha o formato que mais se encaixa na sua rotina.
                     </p>
                 </Reveal>
 

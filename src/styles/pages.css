@@ -131,11 +131,83 @@
     margin-bottom: 22px;
 }
 
+/* Seção "A essência": manifesto de uma tela inteira */
+.tb-essence-section {
+    position: relative;
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    /* min-height: 100vh; */
+    /* min-height: 100svh; */
+    padding: clamp(80px, 12vh, 160px) 0;
+}
+
+.tb-essence-deco {
+    position: absolute;
+    z-index: -1;
+}
+
+.tb-essence {
+    max-width: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tb-essence .tb-eyebrow {
+    justify-content: center;
+    margin-bottom: clamp(24px, 4vh, 40px);
+}
+
+.tb-essence .tb-eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--pallete-third);
+    border-radius: 2px;
+}
+
+.tb-essence h2 {
+    margin-bottom: clamp(24px, 3.5vh, 40px);
+    font-family: var(--second-font);
+    font-size: clamp(2rem, 3.4vw, 3.1rem);
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: 0.015em;
+    text-transform: none;
+    text-wrap: balance;
+}
+
+.tb-essence p {
+    max-width: 64ch;
+    margin: 0 auto;
+    color: var(--tb-muted);
+    font-family: var(--main-font);
+    font-size: clamp(1.05rem, 1.45vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+    text-wrap: pretty;
+}
+
+.tb-essence p + p {
+    margin-top: clamp(16px, 2.4vh, 28px);
+}
+
+.tb-essence .tb-lead {
+    max-width: 64ch;
+    margin: 0 auto;
+    color: var(--pallete-fisrt);
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    line-height: 1.7;
+}
+
 .tb-media-frame {
     position: relative;
     overflow: hidden;
-    border-radius: clamp(22px, 3vw, 34px);
-    aspect-ratio: 5 / 4;
+    border-radius: clamp(22px, 4vw, 34px);
+    aspect-ratio: 1;
     box-shadow: var(--tb-shadow-soft);
     background: var(--pallete-second);
 }
@@ -149,6 +221,15 @@
 
 .tb-media-frame--portrait {
     aspect-ratio: 4 / 5;
+}
+
+/* Enquadramento da foto "portrait_final":
+   - object-position controla o corte vertical (a foto é retrato e o quadro é
+     paisagem, então cover encaixa a largura e só sobra folga vertical);
+   - o zoom (scale) cria a folga horizontal e o transform-origin define o
+     ponto focal: X maior → a imagem aparece mais à esquerda do quadro. */
+.tb-media-frame--shift img {
+    object-position: 65% 65%;
 }
 
 .tb-media-frame__badge {
@@ -500,5 +581,42 @@
 
     .tb-price-row strong {
         margin-left: 0;
+    }
+}
+
+/* =========================================================
+   Carrossel de rolagem em telas pequenas (tb-swipe-sm)
+   Sangra as bordas do container e usa padding interno para
+   que o primeiro/último card fiquem alinhados com o conteúdo.
+   ========================================================= */
+@media (max-width: 767px) {
+    .tb-swipe-sm {
+        display: flex;
+        gap: 18px;
+        margin: 0 calc(-1 * clamp(20px, 4vw, 36px));
+        padding: 6px clamp(20px, 4vw, 36px) 20px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tb-swipe-sm::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Espaços invisíveis nas pontas permitem que o primeiro e o último
+       card alcançem o centro da tela no snap */
+    .tb-swipe-sm::before,
+    .tb-swipe-sm::after {
+        content: '';
+        /* max() protege contra calc negativo em telas muito estreitas */
+        flex: 0 0 max(0px, calc(50% - min(78vw, 320px) / 2 - 18px));
+    }
+
+    .tb-swipe-sm > * {
+        flex: 0 0 min(78vw, 320px);
+        scroll-snap-align: center;
     }
 }
